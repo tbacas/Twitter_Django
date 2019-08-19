@@ -1,0 +1,56 @@
+{% extends "tweets/base.html" %}
+{% block content %}
+	<!-- <p>Welcome, {{ user.first_name }}</p> -->
+	<h3>Insert Username Here</h3>
+	<form method="post">
+		{% csrf_token %}
+		<input type="text" value ="Username" name="username" style="padding: 7px 20px 7px 20px;">
+		<button type="submit" form="form1" value="Submit">Submit</button>
+	</form>
+
+	{%for tweet in tweets%}
+	<article class="media content-section">
+		<div class="media-body">
+			<div class="article-metadata">
+				<a class="mr-2" href="http://twitter.com/{{ tweet.screen_name }}">{{ tweet.screen_name }}</a>
+				<small class="text-muted">{{ tweet.tweet_date }}</small>
+			</div>
+			<h2 class="article-title">{{ post.id_str}}</h2>
+			<h5 class = 'article-title'>{{post.ClientName}}</h5>
+			<h6 class='article-title'> Words in English Dict: {{ tweet.num_in_dict }}</h6>
+			<p class="article-content">{{ tweet.tweet }}</p>
+		</div>
+	</article>
+	{% endfor %}
+	
+	<!-- <button onclick="myFunction()" style="margin-bottom: 50px; margin-top: 10px; width: 100%; height: 50px;">View More</button>
+	<div id="myDIV" style="display: none;">
+
+	{%for e in otherdict%}
+	<article class="media content-section">
+		<div class="media-body">
+			<div class="article-metadata">
+				<a class="mr-2" href="#">{{ e.Creator }}</a>
+				<small class="text-muted">{{ e.DateAdded }}</small>
+			</div>
+			<h2 class="article-title">{{ e.OrgName}}</h2>
+			<h5 class = 'article-title'>{{e.ClientName}}</h5>
+			<h6 class='article-title'> {{ e.Email }}</h6>
+			<p class="article-content">{{ e.WeightedValues }}</p>
+		</div>
+	</article>
+	{% endfor %}
+	</div>
+	<script type="text/javascript">
+		function myFunction() {
+	var x = document.getElementById("myDIV");
+	if (x.style.display === "none") {
+	x.style.display = "block";
+	} else {
+	x.style.display = "none";
+	}
+	}
+	
+		
+	</script> -->
+{% endblock content %}
