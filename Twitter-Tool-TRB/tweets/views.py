@@ -17,10 +17,10 @@ d = enchant.Dict("en_US")
 
 def tweets(request):
 
-    ckey = 'RGcLF8pLxIRcA7rdmvKAEUErF'
-    csecret = 'xcwAHvO5LmHYrFFtdrBKpbJA5jFY34DL8oMkCbfr7DHiQjGaRw'
-    atoken = '1002463391557005312-EeaXyNEJpDH7lqlCznFsC97FkNNAfS'
-    asecret = 'M9JD9zlOaXboGaobJORNMJr4jLzdkIVAbQNSMYfcz4UEm'
+    ckey = 'X'
+    csecret = 'X'
+    atoken = 'X'
+    asecret = 'X'
 
     auth = tweepy.OAuthHandler(ckey, csecret)
     auth.set_access_token(atoken, asecret)
